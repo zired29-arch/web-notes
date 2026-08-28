@@ -6,30 +6,31 @@ body {
 
 header {
     height: 10vh;
-    padding-left: 30px;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
-    gap: 50px;
     font-size: 36px;
     background-color: grey;
 }
 
-header p {
-    margin-left: 50%;
-    font-size: 24px;
-}
-
-header img {
-    height: 80px;
-    width: 80px;
+.header-left, .statistics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 main {
     height: 80vh;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
+}
+
+.input-block {
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .custom-btn {
@@ -47,7 +48,6 @@ main {
    7px 7px 20px 0px rgba(0,0,0,.1),
    4px 4px 5px 0px rgba(0,0,0,.1);
   outline: none;
-  margin-bottom: 10vh;
 }
 
 .btn-5 {

@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web-Notes</title>
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="./img/notebook.png">
-        <div>Web-Notes</div>
-        
-        <p>Онлайн сервис для создания заметок</p>
-        <button>Тёмная тема</button>
+        <div class="header-left">
+            <div><img src="./img/notebook.png"></div>
+            <div>Web-Notes</div>
+        </div>
+            <div class="header-right">
+                <div class="statistics">
+                <div>Выполнено: <span>0</span></div>
+                <div>Не выполнено: <span>0</span></div>
+                <div>В процессе: <span>0</span></div>
+                <div><button>Тёмная тема</button></div>
+            </div>
+        </div>
     </header>
     <main>
+        <div class="input-block">
+            <div><input type="text"></div>
+            <div>+</div>
+        </div>
         <button class="custom-btn btn-5"><span>Создать заметку</span></button>
     </main>
     <footer>
