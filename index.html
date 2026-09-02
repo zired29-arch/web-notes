@@ -18,17 +18,61 @@
                     <div>Не выполнено: <span>0</span></div>
                     <div>В процессе: <span>0</span></div>
                 </div>
-                 <div><button>Тёмная тема</button></div>
+                 <div><button class="theme"><img src="./img/dark-theme.png"></button></div>
             </div>
         </div>
     </header>
+
     <main>
         <div class="input-block">
-            <div><input type="text"></div>
-            <button>+</button>
+            <div><input class="input-task" type="text" placeholder="Введите задачу"></div>
+            <div><input class="input-date" type="date"></div>
+            <select class="select-status">
+                <option value="Не выполнено">Не выполнено</option>
+                <option value="В процессе">В процессе</option>
+                <option value="Выполнено">Выполнено</option>
+            </select>
+            <button class="add-task">+</button>
         </div>
+
         <button class="custom-btn btn-5"><span>Создать заметку</span></button>
         <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Taskname</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="tasks-list">
+                    <tr>
+                        <td>#</td>
+                        <td>Taskname</td>
+                        <td>Deadline</td>
+                        <td>Status</td>
+                        <td>
+                            <button><img src="./img/pencil.png"></button>
+                            <button><img src="./img/trashcan.png"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#</td>
+                        <td>Taskname</td>
+                        <td>Deadline</td>
+                        <td>Status</td>
+                        <td>
+                            <button><img src="./img/pencil.png"></button>
+                            <button><img src="./img/trashcan.png"></button>
+                        </td>
+                    </tr>
+                    <!-- Задачи будут добавляться через JS -->
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="table">
             <div class="head">#</div>
             <div class="head">Taskname</div>
             <div class="head">Deadline</div>
@@ -42,8 +86,9 @@
             <div>Todo</div>
             <div></div>
             <div></div>
-        </div>
+        </div> -->
     </main>
+
     <footer>
         <img src="./img/notebook.png">
         <div>Web-Notes</div>

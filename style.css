@@ -25,8 +25,26 @@ header {
 }
 
 .statistics {
+    color: white;
     font-size: 20px;
     padding-right: 8em;
+}
+
+.theme {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(202, 202, 202);
+}
+
+.theme img {
+    width: 60px;
+    height: 60px;
+}
+
+.statistics div {
+    padding: 0.5em;
+    background-color: rgb(56, 56, 56);
+    border-radius: 10px;
 }
 
 main {
@@ -79,8 +97,8 @@ main {
     line-height: 42px;
     padding: 0;
     border: none;
-    background: rgb(255,27,0);
-    background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+    background: #2A7B9B;
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
 }
 .btn-5:hover {
     color: #f0094a;
@@ -113,27 +131,52 @@ main {
     width:100%;
     transition:800ms ease all;
 }
-
+/* Создание Таблицы */
 .table {
-    background-color: rgb(235, 235, 235);
-    display: grid;
-    grid-template-columns: repeat(6, 140px);
-    grid-template-rows: repeat(3, 40px);
-    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 50px 0px rgba(34, 60, 80, 0.3);
+    width: 80vw;
+    display: none;
 }
 
-.table > div {
-    border-bottom: 1px solid rgb(187, 187, 187);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 5px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ebebeb;
+    border-radius: 16px;
 }
 
-.table > .head {
+th {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: 600;
     font-size: 20px;
-    font-weight: 400;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #333333;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+td button {
+    background-color: rgb(192, 192, 192);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+td button:active {
+    background-color: rgb(97, 97, 97);
+}
+
+td img {
+    margin: 0 15px;
+    width: 25px;
+    height: 25px;
 }
 
 footer {
