@@ -54,6 +54,7 @@ function create_task() {
     }
     save_task()
     render_task()
+    clear_inputs()
 }
 
 function render_task() {
@@ -83,7 +84,79 @@ function render_task() {
         let status_td = document.createElement("td")
         let status_select = document.createElement("select")
         status_select.classList.add("select-status")
+        let statuses = ["Выполнено", "Не выполнено", "В процессе"]
+        statuses.forEach(function(status) {
+            let option = document.createElement("option")
+            option.value = status
+            option.textContent = status
+            if (status === task.status) {
+                option.selected = true
+            }
+            status_select.appendChild(option)
+        })
+        status_select.addEventListener('change', function() {
+            task.status = status_select.value
+            save_task()
+        })
+        status_td.appendChild(status_select)
+        // Добавление кнопок
+        let actions_td = document.createElement("td")
+        let edit_btn = document.createElement("button")
+        edit_btn.textContent = "Редактировать"
+        edit_btn.classList.add("edit-btn")
+        edit_btn.addEventListener('click', function() {
+            // Вызов функции редактирования
+            edit_task(task.id)
+        })
+        let delete_btn = document.createElement("button")
+        delete_btn.textContent = "Удалить"
+        delete_btn.classList.add("delete-btn")
+        delete_btn.addEventListener('click', function() {
+            // Вызов функции удаления
+            delete_task(task.id)
+        })
+        actions_td.appendChild(edit_btn)
+        actions_td.appendChild(delete_btn)
+        // Собирание строки
+        tr.appendChild(id_td)
+        tr.appendChild(task_td)
+        tr.appendChild(deadline_td)
+        tr.appendChild(status_td)
+        tr.appendChild(actions_td)
     });
+    // Вызов функции обновления статистики
+}
+
+// Функция редактирования
+function edit_task(id) {
+    let current_task = tasks.find(function(item) {
+        return item.id === id
+    })
+    if (!current_task) {
+        return
+    }
+    input_task.value = current_task.text
+    input_date.value = current_task.deadline
+    selector_status.value = current_task.status
+    edit_id = id
+    input_block.style.display = "flex"
+    create_btn.style.display = "none"
+    input_task.focus()
+}
+
+function delete_task(id) {
+    tasks = tasks.filter(function(task) {
+        return task.id !== id
+    })
+    save_task()
+    render_task()
+}
+
+// Очистка input
+function clear_inputs() {
+    input_task.value = ""
+    input_date.value = ""
+    status_select.value = "Не выполнена"
 }
 
 add_task_btn.addEventListener('click', function() {

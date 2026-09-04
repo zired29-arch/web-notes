@@ -97,8 +97,8 @@ main {
     line-height: 42px;
     padding: 0;
     border: none;
-    background: #2A7B9B;
-    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background: #ff6947;
+    background: linear-gradient(0deg, rgba(255, 105, 71, 1) 50%, rgba(255, 153, 122, 1) 80%, rgba(255, 199, 199, 1) 100%);
 }
 .btn-5:hover {
     color: #f0094a;
@@ -113,7 +113,7 @@ main {
     right:0;
     height:2px;
     width:0;
-    background: #f0094a;
+    background: #ff7350;
     box-shadow:
     -1px -1px 5px 0px #fff,
     7px 7px 20px 0px #0003,
