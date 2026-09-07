@@ -65,6 +65,7 @@ function render_task() {
         return
     }
     table.style.display = "block"
+    console.log(tasks)
     tasks.forEach(function(task, index) {
         let tr = document.createElement("tr")
         // Добавление номера задачи
@@ -104,14 +105,14 @@ function render_task() {
         // Добавление кнопок
         let actions_td = document.createElement("td")
         let edit_btn = document.createElement("button")
-        edit_btn.textContent = "Редактировать"
+        edit_btn.innerHTML = `<img src="./img/pencil.png">`
         edit_btn.classList.add("edit-btn")
         edit_btn.addEventListener('click', function() {
             // Вызов функции редактирования
             edit_task(task.id)
         })
         let delete_btn = document.createElement("button")
-        delete_btn.textContent = "Удалить"
+        delete_btn.innerHTML = `<img src="./img/trashcan.png">`
         delete_btn.classList.add("delete-btn")
         delete_btn.addEventListener('click', function() {
             // Вызов функции удаления
@@ -125,6 +126,7 @@ function render_task() {
         tr.appendChild(deadline_td)
         tr.appendChild(status_td)
         tr.appendChild(actions_td)
+        tbody.appendChild(tr)
     });
     // Вызов функции обновления статистики
     statistics()
@@ -159,7 +161,7 @@ function delete_task(id) {
 function clear_inputs() {
     input_task.value = ""
     input_date.value = ""
-    status_select.value = "Не выполнена"
+    selector_status.value = "Не выполнено"
 }
 
 // Статистика
@@ -199,3 +201,5 @@ theme_btn.addEventListener('click', function() {
         theme = "light"
     }
 })
+
+render_task()
