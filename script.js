@@ -61,6 +61,7 @@ function render_task() {
     tbody.innerHTML = ""
     if (tasks.length === 0) {
         table.style.display = "none"
+        statistics()
         return
     }
     table.style.display = "block"
@@ -97,6 +98,7 @@ function render_task() {
         status_select.addEventListener('change', function() {
             task.status = status_select.value
             save_task()
+            statistics()
         })
         status_td.appendChild(status_select)
         // Добавление кнопок
@@ -125,6 +127,7 @@ function render_task() {
         tr.appendChild(actions_td)
     });
     // Вызов функции обновления статистики
+    statistics()
 }
 
 // Функция редактирования
@@ -157,6 +160,25 @@ function clear_inputs() {
     input_task.value = ""
     input_date.value = ""
     status_select.value = "Не выполнена"
+}
+
+// Статистика
+function statistics() {
+    let done = 0
+    let not_done = 0
+    let in_work = 0
+    tasks.forEach(function(task) {
+        if (task.status === "Выполнено") {
+            done++
+        } else if (task.status === "Не выполнено") {
+            not_done++
+        } else {
+            in_work++
+        }
+    })
+    document.querySelector('.done').textContent = done
+    document.querySelector('.not_done').textContent = not_done
+    document.querySelector('.in_work').textContent = in_work
 }
 
 add_task_btn.addEventListener('click', function() {
