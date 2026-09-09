@@ -133,6 +133,9 @@ main {
 }
 /* Создание Таблицы */
 .table {
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: auto;
     border-radius: 16px;
     box-shadow: 0px 0px 50px 0px rgba(34, 60, 80, 0.3);
     width: 80vw;
@@ -144,6 +147,12 @@ table {
     border-collapse: collapse;
     background-color: #ebebeb;
     border-radius: 16px;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 th {

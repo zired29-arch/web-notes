@@ -194,10 +194,56 @@ input_task.addEventListener('keydown', function(event) {
 
 theme_btn.addEventListener('click', function() {
     if (theme === "light") {
-        theme_btn.innerHTML = `<img src="./img/light-theme.png">`
+        document.body.style.backgroundColor = '#1a1a1a'
+        document.body.style.color = '#ffffff'
+        document.querySelector('header').style.backgroundColor = '#333'
+        document.querySelector('footer').style.backgroundColor = '#333'
+        document.querySelectorAll('.statistics div').forEach(el => el.style.backgroundColor = '#444')
+        document.querySelector('table').style.backgroundColor = '#2c2c2c'
+        document.querySelectorAll('th').forEach(el => {
+            el.style.backgroundColor = '#555'
+        })
+        document.querySelectorAll('td').forEach(el => {
+            el.style.backgroundColor = '#3a3a3a'
+            el.style.color = '#fff'
+            el.style.borderBottom = '1px solid #555'
+        })
+        document.querySelectorAll('.input-task, .input-date, .select-status').forEach(el => {
+            el.style.backgroundColor = '#333'
+            el.style.color = '#fff'
+            el.style.border = '1px solid #555'
+        })
+        document.querySelector('.add-task').style.backgroundColor = '#555'
+        document.querySelector('.add-task').style.color = '#fff'
+        document.querySelector('.custom-btn').style.background = 'linear-gradient(0deg, #444 50%, #666 80%, #888 100%)'
+        document.querySelector('.custom-btn').style.color = '#fff'
+        theme_btn.innerHTML = '<img src="./img/light-theme.png">'
         theme = "dark"
     } else {
-        theme_btn.innerHTML = `<img src="./img/dark-theme.png">`
+        document.body.style.backgroundColor = ''
+        document.body.style.color = ''
+        document.querySelector('header').style.backgroundColor = ''
+        document.querySelector('footer').style.backgroundColor = ''
+        document.querySelectorAll('.statistics div').forEach(el => {
+            el.style.backgroundColor = ''
+        })
+        document.querySelector('table').style.backgroundColor = ''
+        document.querySelectorAll('th').forEach(el => el.style.backgroundColor = '')
+        document.querySelectorAll('td').forEach(el => {
+            el.style.backgroundColor = ''
+            el.style.color = ''
+            el.style.borderBottom = ''
+        })
+        document.querySelectorAll('.input-task, .input-date, .select-status').forEach(el => {
+            el.style.backgroundColor = ''
+            el.style.color = ''
+            el.style.border = ''
+        })
+        document.querySelector('.add-task').style.backgroundColor = ''
+        document.querySelector('.add-task').style.color = ''
+        document.querySelector('.custom-btn').style.background = ''
+        document.querySelector('.custom-btn').style.color = ''
+        theme_btn.innerHTML = '<img src="./img/dark-theme.png">'
         theme = "light"
     }
 })
