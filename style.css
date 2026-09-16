@@ -203,34 +203,34 @@ footer img {
     width: 60px;
 }
 
-@media (orientation: portrait) and (max-width: 768px) {
+/* Стили для телефонов до 768 */
+@media (max-width: 768px) {
     header {
-        min-height: 6vh;
-        font-size: 14px;
-        padding: 6px 10px;
-        flex-wrap: wrap;
-        gap: 5px;
+        height: auto;
+        min-height: 150px;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 24px;
+        padding: 10px;
+        gap: 15px;
     }
 
     .logo img {
-        height: 30px;
-        width: 30px;
-    }
-
-    .header-left {
-        font-size: 14px;
+        height: 45px;
+        width: 45px;
     }
 
     .header-right {
+        width: 100%;
         padding-right: 0;
+        gap: 60px;
     }
 
     .statistics {
         color: white;
-        font-size: 11px;
         padding-right: 0;
-        gap: 4px;
-        flex-wrap: wrap;
+        gap: 10px;
+        flex: 1;
         justify-content: center;
     }
 
@@ -241,87 +241,85 @@ footer img {
     }
 
     .theme img {
-        width: 28px;
-        height: 28px;
+        width: 45px;
+        height: 45px;
     }
 
     main {
         min-height: 80vh;
         height: auto;
-        gap: 20px;
-        padding: 15px 10px;
+        gap: 40px;
+        padding: 30px 15px;
+        box-sizing: border-box;
         justify-content: flex-start;
     }
 
     .input-block {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
         width: 100%;
     }
 
-    .input-block input {
-        width: 90vw;
-        max-width: 100%;
-        height: 40px;
-        font-size: 14px;
+    .input-block > div {
+        width: 100%;
     }
 
-    .input-block .select-status {
-        width: 90vw;
-        max-width: 100%;
-        height: 40px;
-        font-size: 14px;
+    .input-block input, .input-block .select-status {
+        width: 100%;
+        height: 45px;
+        font-size: 16px;
+        box-sizing: border-box;
     }
 
     .custom-btn {
         padding: 8px 20px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .table {
-        width: 95vw;
+        width: 100%;
         max-height: 55vh;
     }
 
     table {
-        min-width: 500px;
-        width: 100%;
+        min-width: 600px;
     }
 
     th {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     td {
-        font-size: 11px;
+        font-size: 16px;
     }
 
     td img {
-        width: 18px;
-        height: 18px;
-        margin: 0 5px;
+        width: 20px;
+        height: 20px;
     }
 
     td button {
         padding: 4px;
         border-radius: 8px;
+        margin: 0 10px;
     }
 
     td .select-status {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     footer {
-        min-height: 8vh;
+        min-height: 80px;
         height: auto;
-        font-size: 14px;
+        font-size: 18px;
+        box-sizing: border-box;
         padding: 8px 10px;
         flex-direction: row;
         justify-content: space-around;
     }
 
     footer img {
-        height: 30px;
-        width: 30px;
+        height: 45px;
+        width: 45px;
     }
 }
