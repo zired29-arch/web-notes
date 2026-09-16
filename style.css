@@ -205,7 +205,7 @@ footer img {
 
 @media (orientation: portrait) and (max-width: 768px) {
     header {
-        height: 6vh;
+        min-height: 6vh;
         font-size: 14px;
         padding: 6px 10px;
         flex-wrap: wrap;
@@ -246,7 +246,8 @@ footer img {
     }
 
     main {
-        height: 80vh;
+        min-height: 80vh;
+        height: auto;
         gap: 20px;
         padding: 15px 10px;
         justify-content: flex-start;
@@ -255,16 +256,19 @@ footer img {
     .input-block {
         flex-direction: column;
         gap: 8px;
+        width: 100%;
     }
 
     .input-block input {
         width: 90vw;
+        max-width: 100%;
         height: 40px;
         font-size: 14px;
     }
 
     .input-block .select-status {
         width: 90vw;
+        max-width: 100%;
         height: 40px;
         font-size: 14px;
     }
@@ -281,11 +285,11 @@ footer img {
 
     table {
         min-width: 500px;
+        width: 100%;
     }
 
     th {
         font-size: 12px;
-
     }
 
     td {
@@ -308,7 +312,8 @@ footer img {
     }
 
     footer {
-        height: 8vh;
+        min-height: 8vh;
+        height: auto;
         font-size: 14px;
         padding: 8px 10px;
         flex-direction: row;
