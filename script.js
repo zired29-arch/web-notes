@@ -8,6 +8,33 @@ const add_task_btn = document.querySelector('.add-task')
 const table = document.querySelector('.table')
 const tbody = document.querySelector('.tasks-list')
 
+// Добавление текущего года
+const year = new Date().getFullYear()
+const month = new Date().getMonth() + 1
+const day = new Date().getDate()
+document.querySelector('#year').textContent = `${day}.${month}.${year}`
+
+// Получение информации о местоположении
+let city = document.querySelector('.city-info')
+navigator.geolocation.getCurrentPosition(
+    async (position) => {
+        let latitude = position.coords.latitude
+        let longitude = position.coords.longitude
+        let response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
+        let data = await response.json()
+        const user_city = data.address.city
+        city.textContent = user_city
+    },
+    () => {
+        city.textContent = "Город"
+    }
+)
+
+// Обновление страницы при нажатии на лого
+document.querySelector('.logo').addEventListener('click', function() {
+    location.reload()
+})
+
 let edit_id = null // Режим редактирования
 let theme = "light"
 // Массив задач
