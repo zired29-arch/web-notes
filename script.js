@@ -22,7 +22,7 @@ navigator.geolocation.getCurrentPosition(
         let longitude = position.coords.longitude
         let response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
         let data = await response.json()
-        const user_city = data.address.city
+        const user_city = data.address.city || data.address.town || data.address.village || "Неизвестно"
         city.textContent = user_city
     },
     () => {
